@@ -26,6 +26,6 @@ fg_bg : Randomly placed each fg 40 times(with flips) over each bg. Total images 
 
 fg_bg_mask : fg is converted from RGB to black and overlaid on top of black background. This is done along with step 3 (in the same for loop). Total images = 400K. Size = 1.6GB; Resolution = 224X224
 
-fg_bg_depth : Tweaks with respect to image input folder and save have been made from the shared Dense Depth code. Image loading is done on CPU while prediction is done on GPU. Need to load the data as well in GPU for fast processing. Total images completed = 40K and remaining work-in-progress. 2000 images takes 15 minutes hence working on optimizations. Could have done this in the same for loop along with steps 3 and 4.
+fg_bg_depth : Tweaks with respect to image input folder and save have been made from the shared Dense Depth code. Image loading is done on CPU while prediction is done on GPU. Need to load the data as well in GPU for fast processing. 2000 images takes 15 minutes hence working on optimizations. Could have done this in the same for loop along with steps 3 and 4.
 
 # Approaches to depth estimation
