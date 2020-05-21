@@ -28,4 +28,6 @@ fg_bg_mask : fg is converted from RGB to black and overlaid on top of black back
 
 fg_bg_depth : Tweaks with respect to image input folder and save have been made from the shared Dense Depth code. Image loading is done on CPU while prediction is done on GPU. Need to load the data as well in GPU for fast processing. 2000 images takes 15 minutes hence working on optimizations. Could have done this in the same for loop along with steps 3 and 4.
 
+<img src = "Data_Samples_Depth_Model.png">
+
 # Approaches to depth estimation
