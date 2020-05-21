@@ -5,7 +5,7 @@ Table of contents :
 1) Understanding the problem
 2) Applications of depth estimation
 3) Data preparation
-4) Approaches to depth estimation
+4) Approach to depth estimation
 5) Findings
 6) Conclusion
 
@@ -30,4 +30,11 @@ fg_bg_depth : Tweaks with respect to image input folder and save have been made 
 
 <img src = "Data_Samples_Depth_Model.png">
 
-# Approaches to depth estimation
+# Approach to depth estimation
+Create data loader to load the dataset (batch by batch)
+Use augmentation strategy (resize and normalize using the mean and standard deviation of the dataset)
+Create a model which takes fg_bg and bg (stacked over one another) as input and convolve
+2 losses are used 
+  i) Comparing the output with fg_bg_mask
+  ii)Comparing the output with fg_bg_depth
+Ran the model for 100 epochs : Each epoch took 3 minutes to run  
