@@ -6,8 +6,9 @@ Table of contents :
 2) Applications of depth estimation
 3) Data preparation
 4) Approach to depth estimation
-5) Findings
-6) Conclusion
+5) Implementation constraints
+6) Result
+7) Appendix
 
 # Understanding the problem
 Human brain has the remarkable ability to infer depth when viewing a two-dimensional scene (even in a photograph). But accurate depth mapping is a challenge in computer vision which computer vision enthusiasts are trying to solve. The problem I am trying to solve here is to do a monocular depth estimation and object segmentation using custom prepared dataset.
@@ -30,6 +31,12 @@ fg_bg_depth : Tweaks with respect to image input folder and save have been made 
 
 <img src = "Data_Samples_Depth_Model.png">
 
+Link to codes :
+
+Overlap and mask : https://github.com/aimbsg/EVA4_S14/blob/master/EVA4_S14_Overlap_And_Mask.ipynb
+
+Dense depth model : https://github.com/aimbsg/EVA4_S14/blob/master/EVA4_S14_Dense_depth_model.ipynb
+
 # Approach to depth estimation
 Create data loader to load the dataset (batch by batch). Earlier started with loading whole set of 400K images. But after loading 20K images, Colab crashed with  
 
@@ -37,10 +44,34 @@ Use augmentation strategy (resize and normalize using the mean and standard devi
 
 Create a model which takes fg_bg and bg (stacked over one another) as input and convolve
 
-2 losses are used,
+2 losses to be used,
 
   i) Comparing the output with fg_bg_mask
 
   ii)Comparing the output with fg_bg_depth
 
-Ran the model for 100 epochs : Each epoch took 3 minutes to run  
+Ran the model for 100 epochs
+
+Compare train vs validation accuracy. Save the model and change the learning rate and re-run the model for more number of epochs.
+
+# Implementation constraints 
+Data I have used to train so far are small (CIFAR10 ~60K, tinyimagenet ~100K) compared to this custom dataset (400K). 
+
+Got time out error while loading the complete dataset in Colab.
+
+As I rely on office laptop for assignment I do not have privilege to use local installation of python and have to use Colab, which I read is the best to solve for large dataset.
+
+So I trained with 100K dataset for 225 epochs.
+
+# Result
+Link to code : 
+
+Best mask accuracy : 46.31%
+
+Best depth accuracy : 40.58%
+
+# References
+https://arxiv.org/abs/1812.11941
+https://arxiv.org/abs/1608.06993
+https://towardsdatascience.com/depth-estimation-on-camera-images-using-densenets-ac454caa893
+
