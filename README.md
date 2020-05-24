@@ -64,7 +64,7 @@ As I rely on office laptop for assignment I do not have privilege to use local i
 So I trained with 100K dataset for 225 epochs.
 
 # Result
-Link to code : 
+Link to code : https://github.com/aimbsg/EVA4_S15/blob/master/EVA4_S15_Custom_Dataset_Depth_Prediction.ipynb
 
 Best mask accuracy : 46.31%
 
