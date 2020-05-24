@@ -31,10 +31,16 @@ fg_bg_depth : Tweaks with respect to image input folder and save have been made 
 <img src = "Data_Samples_Depth_Model.png">
 
 # Approach to depth estimation
-Create data loader to load the dataset (batch by batch)
+Create data loader to load the dataset (batch by batch). Earlier started with loading whole set of 400K images. But after loading 20K images, Colab crashed with  
+
 Use augmentation strategy (resize and normalize using the mean and standard deviation of the dataset)
+
 Create a model which takes fg_bg and bg (stacked over one another) as input and convolve
-2 losses are used 
+
+2 losses are used,
+
   i) Comparing the output with fg_bg_mask
+
   ii)Comparing the output with fg_bg_depth
+
 Ran the model for 100 epochs : Each epoch took 3 minutes to run  
