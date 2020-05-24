@@ -50,7 +50,7 @@ Create a model which takes fg_bg and bg (stacked over one another) as input and 
 
   ii)Comparing the output with fg_bg_depth
 
-Ran the model for 100 epochs
+Run the model for 'n' epochs
 
 Compare train vs validation accuracy. Save the model and change the learning rate and re-run the model for more number of epochs.
 
