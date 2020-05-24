@@ -72,6 +72,8 @@ Best depth accuracy : 40.58%
 
 # References
 https://arxiv.org/abs/1812.11941
+
 https://arxiv.org/abs/1608.06993
+
 https://towardsdatascience.com/depth-estimation-on-camera-images-using-densenets-ac454caa893
 
