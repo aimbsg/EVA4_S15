@@ -38,11 +38,11 @@ Overlap and mask : https://github.com/aimbsg/EVA4_S14/blob/master/EVA4_S14_Overl
 Dense depth model : https://github.com/aimbsg/EVA4_S14/blob/master/EVA4_S14_Dense_depth_model.ipynb
 
 # Approach to depth estimation
-Create data loader to load the dataset (batch by batch). Earlier started with loading whole set of 400K images. But after loading 20K images, Colab crashed with  
+Create data loader to load the dataset (preferably in batches considering the size of the dataset)  
 
 Use augmentation strategy (resize and normalize using the mean and standard deviation of the dataset)
 
-Create a model which takes fg_bg and bg (stacked over one another) as input and convolve
+Create a model which takes fg_bg and bg (stacked over one another as array) as input. This type of stacking does not the change the size of the input while it increases only the number of channels
 
 2 losses to be used,
 
